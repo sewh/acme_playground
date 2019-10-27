@@ -68,9 +68,9 @@ func main() {
 			}
 
 			var cmd *exec.Cmd
-			ctx, cancel := context.WithTimeout(context.Background(), 5 * time.Second)
+			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 			defer cancel()
-			if (len(args) == 1) {
+			if len(args) == 1 {
 				cmd = exec.CommandContext(ctx, args[0])
 			} else {
 				cmd = exec.CommandContext(ctx, args[0], args[1:]...)
@@ -106,7 +106,6 @@ func main() {
 			<-event
 		}()
 	}
-
 
 }
 
