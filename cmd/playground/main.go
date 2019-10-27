@@ -66,6 +66,8 @@ func main() {
 				fmt.Println("pipe error: " + err.Error())
 				os.Exit(1)
 			}
+			defer inPipeR.Close()
+			defer inPipeW.Close()
 
 			var cmd *exec.Cmd
 			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
